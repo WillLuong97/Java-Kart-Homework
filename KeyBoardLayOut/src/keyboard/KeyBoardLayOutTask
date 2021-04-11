@@ -1,0 +1,6 @@
+To-do: 
+	a. QWERTY to ROT_13
+	b. permuationToMapApplication
+	c. documentation + understanding the code.
+	d. The Set Path: After adding each element in the permutation map into a seperate set: WHERE DO WE GO FROM THERE? 
+				=> ApplyPermutationMap only takes in  both a Permutation permutation (type) and a Map() **** We might not need a set **********

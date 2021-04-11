@@ -1,0 +1,152 @@
+Name: Will Luong 
+Lab4 part 2. 
+
+
+
+package lab4;
+
+import java.io.File;
+import java.io.PrintWriter;
+import java.util.Scanner;
+
+public class RentalCarUtilsImpl {
+	
+	//receives: inFile, an ALREADY set up Scanner, ready to be read from
+	// precondition: inFile is connected to a Scanner and is not null
+	// returns: a populated RentalCar instance with values of 1 single car
+	// read from the inFile. If values are not there to read, returns null.
+	public static RentalCar readFromScanner(Scanner inFile)
+	{
+		String rentVin;
+		int rentYear = 0; 
+		String rentMake; 
+		
+		if(inFile.hasNext()) 
+		{
+			rentVin = inFile.next().trim();  // reading the vin number in the text file. 
+			
+		}
+		
+		else 
+		{
+			return null;
+			
+		}
+		
+		if(inFile.hasNext())
+		{
+			
+			rentYear = inFile.nextInt(); // reading the year in the text file. 
+			
+		}
+		
+		
+		else
+		{
+			return null; 
+			
+		}
+		
+		if (inFile.hasNext()) 
+		{
+			rentMake =inFile.nextLine().trim();  //reading the car make from the text file
+			
+		}
+		
+		else 
+		{
+			return null; 
+		}
+		
+		RentalCar car1 = new RentalCar(rentVin, rentYear, CarMake.valueOf(rentMake));
+
+		return car1; 
+	}
+	
+	//receives: outFile an ALREADY set up PrintWriter, ready to be written to
+	// car: a RentalCar instance to write out to outFile
+	// precondition: outFile is connected to a PrintWriter and is not null
+	// car is not null
+	public static void writeToFile(PrintWriter outFile, RentalCar car)
+	{
+		outFile.println(car.getVin() + " " + car.getYear() + " " + car.getMake());
+	
+	}
+	
+	
+
+}
+
+
+
+
+
+
+
+
+
+
+
+Enter your name: will 
+Testing of Lab4Test for: Will
+Execution BEGINS  at: 2018-09-20 16:33:37
+****Testing Constructors and Accessors****
+SUCCESS expected 2018
+SUCCESS expected 0000
+SUCCESS expected TOYOTA
+SUCCESS expected 2018
+SUCCESS expected 0000
+SUCCESS expected CHRYSLER
+SUCCESS expected 2018
+SUCCESS expected 0000
+SUCCESS expected 2013
+SUCCESS expected 0000
+SUCCESS expected FORD
+**** Testing setters ****
+SUCCESS expected 2018
+SUCCESS expected 2014
+SUCCESS expected 2018
+SUCCESS expected 0000
+SUCCESS expected 0000
+SUCCESS expected 0000
+SUCCESS expected 0000
+SUCCESS expected 0000
+SUCCESS expected 0000
+SUCCESS expected 0000
+SUCCESS expected cczz
+SUCCESS expected 4477
+SUCCESS expected FORD
+SUCCESS expected HONDA
+SUCCESS expected CHEVY
+**** Testing toString() ****
+SUCCESS RentalCar method toString() has proper attribute values in it
+Should Receive string such as:  VIN: 4477 Year: 2018 Make: CHEVY
+Actually Received Back string: The car you enter has these information Car make: CHEVY year: 2018 vin 4477
+SUCCESS expected 0 newlines in String returned from toString().
+SUCCESS String returned from toString() has correct attribute values.
+****Now Testing readFromScanner and writeToFile methods****
+SUCCESS opened file: rentalcar1.txt for input
+1)car populated from file: The car you enter has these information Car make: HONDA year: 2013 vin 8899
+SUCCESS read 1 cars from rentalcar1.txt
+SUCCESS opened file: rentalcar6.txt for input
+1)car populated from file: The car you enter has these information Car make: CHEVY year: 2017 vin 1122
+2)car populated from file: The car you enter has these information Car make: TOYOTA year: 2016 vin 2233
+3)car populated from file: The car you enter has these information Car make: NISSAN year: 2018 vin aabb
+4)car populated from file: The car you enter has these information Car make: CHRYSLER year: 2013 vin 8899
+5)car populated from file: The car you enter has these information Car make: HONDA year: 2014 vin 44aa
+6)car populated from file: The car you enter has these information Car make: FORD year: 2015 vin 882k
+SUCCESS read 6 cars from rentalcar6.txt
+Now testing writeToFile...
+SUCCESS opened file: out6.txt for input
+1)car populated from file: The car you enter has these information Car make: CHEVY year: 2017 vin 1122
+2)car populated from file: The car you enter has these information Car make: TOYOTA year: 2016 vin 2233
+3)car populated from file: The car you enter has these information Car make: NISSAN year: 2018 vin aabb
+4)car populated from file: The car you enter has these information Car make: CHRYSLER year: 2013 vin 8899
+5)car populated from file: The car you enter has these information Car make: HONDA year: 2014 vin 44aa
+6)car populated from file: The car you enter has these information Car make: FORD year: 2015 vin 882k
+SUCCESS read 6 cars from out6.txt
+SUCCESS opened file: rentalcarEmpty.txt for input
+SUCCESS read 0 cars from rentalcarEmpty.txt
+****Testing Complete****
+Execution ENDS  at: 2018-09-20 16:33:37
+End of Testing of Lab4Test for: Will

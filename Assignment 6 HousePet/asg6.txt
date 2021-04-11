@@ -1,0 +1,999 @@
+Will luong
+Assignment #6
+
+********************************HousePetTest.java********************************
+Begin testing of HousePetTest for 
+Execution BEGINS  at: 2018-11-17 20:33:09
+Dog class testing....
+dog1: DOG Chip Id: 11AA 118 years old born: 2/1/1900  $$$$ falseMEDIUM
+dog1: DOG Chip Id: 11AA 5 years old born: 4/4/2013  Luckiest Dog Ever trueTINY
+End of Dog class testing....
+Cat class testing....
+cat1: CAT Chip Id: AAAA 118 years old born: 2/1/1900  $$$$ BLACK
+cat1: CAT Chip Id: 111Z 4 years old born: 2/22/2014  Count Drake BLACK
+End of Cat class testing....
+Bird class testing....
+bird1: BIRD Chip Id: AAAA 118 years old born: 2/1/1900  $$$$ PARROT
+bird1: BIRD Chip Id: JKAB 3 years old born: 4/15/2015  Tweety Tweet PARROT
+End of Bird class testing....
+Testing comparison of HousePets ....
+read/write method testing....
+Testing input of housepetOne.txt and output to: housepetOneOUT.txt
+Just read: DOG Chip Id: Z3BF 16 years old born: 1/21/2002  Superman falseTINY
+
+Begin reading from: housepetOneOUT.txt
+Just read: DOG Chip Id: Z3BF 16 years old born: 1/21/2002  Superman falseTINY
+End of reading from housepetOneOUT.txt
+
+Testing input of housepet.txt and output to: housepetOUT.txt
+Just read: CAT Chip Id: 22BB 8 years old born: 3/12/2010  Zoey The Cat Princess CALICO
+Just read: DOG Chip Id: 992A 6 years old born: 9/12/2012  Rugby Toughy trueVERY_LARGE
+Just read: DOG Chip Id: 33BF 16 years old born: 1/21/2002  Sweety Bones falseTINY
+Just read: BIRD Chip Id: 44GT 2 years old born: 11/30/2016  Skippy Doo Boy COCKATIEL
+Just read: CAT Chip Id: 55WQ 2 years old born: 4/3/2016  Zippity Doo GRAY
+Just read: BIRD Chip Id: 77PY 5 years old born: 10/14/2013  Miss Wonderful GOOSE
+Just read: DOG Chip Id: 88FD 2 years old born: 7/28/2016  Major Kane trueLARGE
+
+Begin reading from: housepetOUT.txt
+Just read: CAT Chip Id: 22BB 8 years old born: 3/12/2010  Zoey The Cat Princess CALICO
+Just read: DOG Chip Id: 992A 6 years old born: 9/12/2012  Rugby Toughy trueVERY_LARGE
+Just read: DOG Chip Id: 33BF 16 years old born: 1/21/2002  Sweety Bones falseTINY
+Just read: BIRD Chip Id: 44GT 2 years old born: 11/30/2016  Skippy Doo Boy COCKATIEL
+Just read: CAT Chip Id: 55WQ 2 years old born: 4/3/2016  Zippity Doo GRAY
+Just read: BIRD Chip Id: 77PY 5 years old born: 10/14/2013  Miss Wonderful GOOSE
+Just read: DOG Chip Id: 88FD 2 years old born: 7/28/2016  Major Kane trueLARGE
+End of reading from housepetOUT.txt
+
+Testing input of housepetExtra.txt and output to: housepetExtraOUT.txt
+Just read: CAT Chip Id: 22BB 8 years old born: 3/12/2010  Zoey The Cat Princess CALICO
+Just read: DOG Chip Id: 392A 6 years old born: 9/12/2012  Rupert trueVERY_LARGE
+Just read: DOG Chip Id: 4KBF 5 years old born: 1/21/2013  Superman trueLARGE
+Just read: BIRD Chip Id: 44GT 2 years old born: 11/30/2016  Skippy Doo Boy COCKATIEL
+Just read: CAT Chip Id: 55WQ 2 years old born: 4/3/2016  Zippity Doo GRAY
+Just read: BIRD Chip Id: 77PY 5 years old born: 10/14/2013  Miss Pearl GOOSE
+Just read: DOG Chip Id: 88FD 2 years old born: 7/28/2016  Mister Jones trueMEDIUM
+Just read: CAT Chip Id: 22BB 8 years old born: 3/12/2010  Zoey The Cat Princess CALICO
+Just read: DOG Chip Id: 992A 6 years old born: 9/12/2012  Rugby Toughy trueVERY_LARGE
+Just read: DOG Chip Id: Z3BF 16 years old born: 1/21/2002  Superman falseTINY
+Just read: BIRD Chip Id: 44GT 2 years old born: 11/30/2016  Skippy Doo Boy COCKATIEL
+Just read: CAT Chip Id: 35WQ 2 years old born: 4/3/2016  Scooby Doo GRAY
+Just read: BIRD Chip Id: 34PY 5 years old born: 10/14/2013  Miss Piggy GOOSE
+Just read: DOG Chip Id: 88FD 2 years old born: 7/28/2016  Major Kane trueLARGE
+Just read: CAT Chip Id: 22BB 8 years old born: 3/12/2010  Miss Sally CALICO
+Just read: DOG Chip Id: E34A 6 years old born: 9/12/2012  Kermit Zach falseVERY_LARGE
+Just read: DOG Chip Id: 23BF 16 years old born: 1/21/2002  Honey falseTINY
+Just read: BIRD Chip Id: ERGT 2 years old born: 11/30/2016  Good Boy COCKATIEL
+Just read: CAT Chip Id: 09WQ 2 years old born: 4/3/2016  Tinker Tinker Belle GRAY
+Just read: BIRD Chip Id: 44PY 5 years old born: 10/14/2013  Bert GOOSE
+Just read: DOG Chip Id: P8FD 2 years old born: 7/28/2016  Ernie trueLARGE
+
+Begin reading from: housepetExtraOUT.txt
+Just read: CAT Chip Id: 22BB 8 years old born: 3/12/2010  Zoey The Cat Princess CALICO
+Just read: DOG Chip Id: 392A 6 years old born: 9/12/2012  Rupert trueVERY_LARGE
+Just read: DOG Chip Id: 4KBF 5 years old born: 1/21/2013  Superman trueLARGE
+Just read: BIRD Chip Id: 44GT 2 years old born: 11/30/2016  Skippy Doo Boy COCKATIEL
+Just read: CAT Chip Id: 55WQ 2 years old born: 4/3/2016  Zippity Doo GRAY
+Just read: BIRD Chip Id: 77PY 5 years old born: 10/14/2013  Miss Pearl GOOSE
+Just read: DOG Chip Id: 88FD 2 years old born: 7/28/2016  Mister Jones trueMEDIUM
+Just read: CAT Chip Id: 22BB 8 years old born: 3/12/2010  Zoey The Cat Princess CALICO
+Just read: DOG Chip Id: 992A 6 years old born: 9/12/2012  Rugby Toughy trueVERY_LARGE
+Just read: DOG Chip Id: Z3BF 16 years old born: 1/21/2002  Superman falseTINY
+Just read: BIRD Chip Id: 44GT 2 years old born: 11/30/2016  Skippy Doo Boy COCKATIEL
+Just read: CAT Chip Id: 35WQ 2 years old born: 4/3/2016  Scooby Doo GRAY
+Just read: BIRD Chip Id: 34PY 5 years old born: 10/14/2013  Miss Piggy GOOSE
+Just read: DOG Chip Id: 88FD 2 years old born: 7/28/2016  Major Kane trueLARGE
+Just read: CAT Chip Id: 22BB 8 years old born: 3/12/2010  Miss Sally CALICO
+Just read: DOG Chip Id: E34A 6 years old born: 9/12/2012  Kermit Zach falseVERY_LARGE
+Just read: DOG Chip Id: 23BF 16 years old born: 1/21/2002  Honey falseTINY
+Just read: BIRD Chip Id: ERGT 2 years old born: 11/30/2016  Good Boy COCKATIEL
+Just read: CAT Chip Id: 09WQ 2 years old born: 4/3/2016  Tinker Tinker Belle GRAY
+Just read: BIRD Chip Id: 44PY 5 years old born: 10/14/2013  Bert GOOSE
+Just read: DOG Chip Id: P8FD 2 years old born: 7/28/2016  Ernie trueLARGE
+End of reading from housepetExtraOUT.txt
+
+End of read/write method testing....
+Execution ENDS  at: 2018-11-17 20:33:09
+End of testing of HousePetTest for 
+***********************************HousePetTest.java*************************************
+
+
+
+
+***********************************HousePetListTest***************************************
+Enter your name: Will 
+Begin testing of HousePet and HousePetList for Will
+Execution BEGINS  at: 2018-11-17 20:36:35
+Dog class testing....
+dog1: DOG Chip Id: 11AA 118 years old born: 2/1/1900  $$$$ falseMEDIUM
+dog1: DOG Chip Id: 11AA 5 years old born: 4/4/2013  Luckiest Dog Ever trueTINY
+End of Dog class testing....
+Cat class testing....
+cat1: CAT Chip Id: AAAA 118 years old born: 2/1/1900  $$$$ BLACK
+cat1: CAT Chip Id: 111Z 4 years old born: 2/22/2014  Count Drake BLACK
+End of Cat class testing....
+Bird class testing....
+bird1: BIRD Chip Id: AAAA 118 years old born: 2/1/1900  $$$$ PARROT
+bird1: BIRD Chip Id: JKAB 3 years old born: 4/15/2015  Tweety Tweet PARROT
+End of Bird class testing....
+Testing constructor, add, toString
+list of 4 pet(s)
+CAT Chip Id: CC11 5 years old born: 6/3/2013  Prince Charles TABBY
+DOG Chip Id: DD11 4 years old born: 2/13/2014  Zorro trueMEDIUM
+BIRD Chip Id: BB11 1 year  old born: 12/1/2017  Super Tweety PARROT
+BIRD Chip Id: BB22 1 year  old born: 12/2/2017  D Skipper COCKATIEL
+
+new list of 7 pet(s) from housepet.txt
+DOG Chip Id: 33BF 16 years old born: 1/21/2002  Sweety Bones falseTINY
+CAT Chip Id: 22BB 8 years old born: 3/12/2010  Zoey The Cat Princess CALICO
+DOG Chip Id: 992A 6 years old born: 9/12/2012  Rugby Toughy trueVERY_LARGE
+BIRD Chip Id: 77PY 5 years old born: 10/14/2013  Miss Wonderful GOOSE
+CAT Chip Id: 55WQ 2 years old born: 4/3/2016  Zippity Doo GRAY
+DOG Chip Id: 88FD 2 years old born: 7/28/2016  Major Kane trueLARGE
+BIRD Chip Id: 44GT 2 years old born: 11/30/2016  Skippy Doo Boy COCKATIEL
+
+new list of 10 pet(s) from housepetExtra.txt
+DOG Chip Id: Z3BF 16 years old born: 1/21/2002  Superman falseTINY
+CAT Chip Id: 22BB 8 years old born: 3/12/2010  Zoey The Cat Princess CALICO
+DOG Chip Id: 392A 6 years old born: 9/12/2012  Rupert trueVERY_LARGE
+DOG Chip Id: 992A 6 years old born: 9/12/2012  Rugby Toughy trueVERY_LARGE
+DOG Chip Id: 4KBF 5 years old born: 1/21/2013  Superman trueLARGE
+BIRD Chip Id: 77PY 5 years old born: 10/14/2013  Miss Pearl GOOSE
+CAT Chip Id: 55WQ 2 years old born: 4/3/2016  Zippity Doo GRAY
+CAT Chip Id: 35WQ 2 years old born: 4/3/2016  Scooby Doo GRAY
+DOG Chip Id: 88FD 2 years old born: 7/28/2016  Mister Jones trueMEDIUM
+BIRD Chip Id: 44GT 2 years old born: 11/30/2016  Skippy Doo Boy COCKATIEL
+
+new list of 1 pet(s) from housepetOne.txt
+DOG Chip Id: Z3BF 16 years old born: 1/21/2002  Superman falseTINY
+
+new list of 0 pet(s) from housepetEmpty.txt
+
+End of Testing constructor, add, toString
+Testing find, get, getAll
+list1 in testFindGetAll():
+CAT Chip Id: CC11 5 years old born: 6/3/2013  Prince Charles TABBY
+DOG Chip Id: DD11 4 years old born: 2/13/2014  Zorro trueMEDIUM
+
+list1: 
+CAT Chip Id: CC11 5 years old born: 6/3/2013  Prince Charles TABBY
+DOG Chip Id: DD11 4 years old born: 2/13/2014  Zorro trueMEDIUM
+BIRD Chip Id: BB11 1 year  old born: 12/1/2017  Super Tweety PARROT
+
+End of Testing find, get, getAll
+Testing name matches and pet ages
+Pets at age 2: 
+CAT Chip Id: 55WQ 2 years old born: 4/3/2016  Zippity Doo GRAY
+CAT Chip Id: 35WQ 2 years old born: 4/3/2016  Scooby Doo GRAY
+DOG Chip Id: 88FD 2 years old born: 7/28/2016  Mister Jones trueMEDIUM
+BIRD Chip Id: 44GT 2 years old born: 11/30/2016  Skippy Doo Boy COCKATIEL
+
+Pets at age 15: 
+
+Pets at age 8: 
+CAT Chip Id: 22BB 8 years old born: 3/12/2010  Zoey The Cat Princess CALICO
+
+End of Testing name matches and pet ages
+Testing remove and clear
+Current list before removals: 
+DOG Chip Id: 33BF 16 years old born: 1/21/2002  Sweety Bones falseTINY
+CAT Chip Id: 22BB 8 years old born: 3/12/2010  Zoey The Cat Princess CALICO
+DOG Chip Id: 992A 6 years old born: 9/12/2012  Rugby Toughy trueVERY_LARGE
+BIRD Chip Id: 77PY 5 years old born: 10/14/2013  Miss Wonderful GOOSE
+CAT Chip Id: 55WQ 2 years old born: 4/3/2016  Zippity Doo GRAY
+DOG Chip Id: 88FD 2 years old born: 7/28/2016  Major Kane trueLARGE
+BIRD Chip Id: 44GT 2 years old born: 11/30/2016  Skippy Doo Boy COCKATIEL
+
+after removals with size: 4 
+CAT Chip Id: 22BB 8 years old born: 3/12/2010  Zoey The Cat Princess CALICO
+DOG Chip Id: 992A 6 years old born: 9/12/2012  Rugby Toughy trueVERY_LARGE
+BIRD Chip Id: 77PY 5 years old born: 10/14/2013  Miss Wonderful GOOSE
+DOG Chip Id: 88FD 2 years old born: 7/28/2016  Major Kane trueLARGE
+
+End of testing remove and clear 
+
+Testing read/write methods ....
+Testing input of housepetOne.txt and output to: housepetOneOUT.txt
+Contents of petList after reading from: housepetOneOUT.txt
+DOG Chip Id: Z3BF 16 years old born: 1/21/2002  Superman falseTINY
+
+Testing input of housepet.txt and output to: housepetOUT.txt
+Contents of petList after reading from: housepetOUT.txt
+DOG Chip Id: 33BF 16 years old born: 1/21/2002  Sweety Bones falseTINY
+CAT Chip Id: 22BB 8 years old born: 3/12/2010  Zoey The Cat Princess CALICO
+DOG Chip Id: 992A 6 years old born: 9/12/2012  Rugby Toughy trueVERY_LARGE
+BIRD Chip Id: 77PY 5 years old born: 10/14/2013  Miss Wonderful GOOSE
+CAT Chip Id: 55WQ 2 years old born: 4/3/2016  Zippity Doo GRAY
+DOG Chip Id: 88FD 2 years old born: 7/28/2016  Major Kane trueLARGE
+BIRD Chip Id: 44GT 2 years old born: 11/30/2016  Skippy Doo Boy COCKATIEL
+
+Testing input of housepetExtra.txt and output to: housepetExtraOUT.txt
+Contents of petList after reading from: housepetExtraOUT.txt
+DOG Chip Id: Z3BF 16 years old born: 1/21/2002  Superman falseTINY
+CAT Chip Id: 22BB 8 years old born: 3/12/2010  Zoey The Cat Princess CALICO
+DOG Chip Id: 392A 6 years old born: 9/12/2012  Rupert trueVERY_LARGE
+DOG Chip Id: 992A 6 years old born: 9/12/2012  Rugby Toughy trueVERY_LARGE
+DOG Chip Id: 4KBF 5 years old born: 1/21/2013  Superman trueLARGE
+BIRD Chip Id: 77PY 5 years old born: 10/14/2013  Miss Pearl GOOSE
+CAT Chip Id: 55WQ 2 years old born: 4/3/2016  Zippity Doo GRAY
+CAT Chip Id: 35WQ 2 years old born: 4/3/2016  Scooby Doo GRAY
+DOG Chip Id: 88FD 2 years old born: 7/28/2016  Mister Jones trueMEDIUM
+BIRD Chip Id: 44GT 2 years old born: 11/30/2016  Skippy Doo Boy COCKATIEL
+
+Testing input of housepetEmpty.txt and output to: housepetEmptyOUT.txt
+Contents of petList after reading from: housepetEmptyOUT.txt
+
+End of read/write method testing....
+Execution ENDS  at: 2018-11-17 20:36:35
+End of testing of HousePet and HousePetList for Will
+***************************************HousePetListTest.java*********************************
+
+
+************************************Dog.java********************************
+package housepet;
+
+public class Dog extends HousePet
+{
+	private DogSize size; 
+	private boolean leashTrained;
+	
+	public Dog()
+	{
+		super(); 
+		this.leashTrained = false; 
+		this.size = DogSize.MEDIUM; 
+	} //end of dog. 
+	
+	
+	public Dog(String aChipId) // use size Medium, and false for leash trained 
+	{
+		super(aChipId); 
+		this.leashTrained = false; 
+		this.size = DogSize.MEDIUM; 
+		
+	} //end of the constructor
+	
+	
+	//Getters. 
+	public Boolean isLeashTrained()
+	{
+		return this.leashTrained; 
+	} //end of isLeashTrained().
+	
+	public DogSize getDogSize()
+	{
+		return this.size; 
+		
+	} //end of DogSize
+	
+	
+	//Setters
+	public void setLeashTrained(boolean isTrained)
+	{
+		this.leashTrained = isTrained; 
+	} //end of setLeashTrained. 
+	
+	
+
+	public void setDogSize(DogSize aSize)
+	{
+		this.size = aSize;
+	} //end of setDogSize(DogSize aSize). 
+	
+	
+	//toString
+	public String toString()
+	{
+		String str = ""; 
+		str += "DOG " + super.toString() + this.leashTrained + this.size;
+		
+		return str; 
+
+	} // end of toString.
+	
+	
+} //end of Dog.java
+*******************************Dog.java*******************************************
+
+
+****************************Cat.java***********************************
+package housepet;
+
+public class Cat extends HousePet
+{
+	private CatColor color;
+	
+	
+	// default constructor. 
+	public Cat()
+	{
+		super(); 
+		this.color = CatColor.BLACK; 
+		
+	} //end of Cat(). 
+	
+	//constructor. 
+	public Cat(String aChipId)
+	{
+		super(aChipId);
+		this.color = CatColor.BLACK; 
+		
+	} //end of Cat(String aChipId).
+	
+	//Getters
+	public CatColor getCatColor()
+	{
+		return this.color; 
+	} //end of CatColor(). 
+	
+	//setter
+	public void setCatColor(CatColor aColor)
+	{
+		this.color = aColor; 
+		
+	}//end of setCatColor().
+	
+	
+	//end of toString()
+	public String toString()
+	{
+		String str = ""; 
+		str += "CAT " + super.toString() + this.color; 
+		
+		return str; 
+
+	} // end of toString(). 
+	
+}//end of Cat.java.
+*******************************Cat.java********************************
+
+
+*****************************Bird.java*******************************
+package housepet;
+
+public class Bird extends HousePet
+{
+	private BirdType type;
+	
+	//default constructor.
+	public Bird()
+	{
+		super();
+		this.type = BirdType.PARROT; 
+		
+	} //end of Bird(). 
+	
+	//constructor
+	public Bird(String aChipId)
+	{
+		super(aChipId); 
+		this.type = BirdType.PARROT; 
+	} //End of Bird(String aChipId). 
+	
+	
+	//Getter
+	public BirdType getBirdType()
+	{
+		return this.type;
+	} //end of Getter.
+	
+	
+	//Setter
+	public void setBirdType(BirdType birdType)
+	{
+		this.type = birdType;
+	} //end of Setter 
+	
+	// toString() method overriden
+	public String toString()
+	{
+		String str = "";
+		
+		str = "BIRD " + super.toString() + this.type;
+		
+		return str; 
+
+	} //end of toString
+	
+} //end of Bird.java
+***********************************Bird.java****************************
+
+
+********************************HousePetUtilsImpl.java******************
+package housepet;
+
+import java.io.PrintWriter;
+import java.util.Scanner;
+
+public class HousePetUtilsImpl 
+{
+		//receives: inFile, a Scanner instance already open and ready for reading 
+       // tries to read one HousePet-derived instance from file, 
+	   // if successful, creates proper HousePet-derived instance, populates it, returns it, assumes data in order expected
+	  //   returns null if no data on inFile to read, returns populated HousePet-derived instance otherwise
+		public static HousePet readFromScanner(Scanner inFile)
+		{
+			//if the file is empty and cannot be read.
+			if(!inFile.hasNext())
+			
+				return null;
+				
+			//reading through each instance of the file
+			String kindOfPet = inFile.next().trim();
+			String chipID = inFile.next().trim();
+			String name = inFile.nextLine();
+			String birthDate = inFile.next();
+			
+			// if the kind of pet is cat.
+			if(kindOfPet.equals("CAT"))
+			{
+				String catColor = inFile.next();
+				
+				//reading attribute for cat
+				Cat newCat = new Cat();
+				newCat.setChipId(chipID);
+				newCat.setPetName(name);
+				newCat.setBirthDate(birthDate);
+				newCat.setCatColor(CatColor.valueOf(catColor));
+				
+				return newCat;
+			} //end of cat type.
+			
+			//if the kind of pet is dog.
+			if(kindOfPet.equals("DOG"))
+			{
+				String leashTrained = inFile.next();
+				String dogSize = inFile.next();
+				
+				//reading attributes for dog
+				Dog newDog = new Dog();
+				newDog.setChipId(chipID);
+				newDog.setPetName(name);
+				newDog.setBirthDate(birthDate);
+				//check for leash trained status.
+				if(leashTrained.equals("yes"))
+				{
+					newDog.setLeashTrained(true);
+				}
+				
+				else
+				{
+					newDog.setLeashTrained(false);
+					
+				}
+				
+				newDog.setDogSize(DogSize.valueOf(dogSize));
+				
+				return newDog;
+				
+			} // end of checking for dog type.
+			
+			//if the kind of pet is bird.
+			if(kindOfPet.equals("BIRD"))
+			{
+				String birdType = inFile.next();
+				
+				//reading attribute for bird.
+				Bird newBird = new Bird();
+				newBird.setChipId(chipID);
+				newBird.setPetName(name);
+				newBird.setBirthDate(birthDate);
+				newBird.setBirdType(BirdType.valueOf(birdType));
+				
+				return newBird;
+				
+			} //end of checking bird type.
+			
+			return null;
+			
+		} // end of readFromScanner(Scanner inFile).
+
+		// receives: HousePet instance to write, outFile, already open and ready to be written to 
+//		    writes received HousePEt instance to file in same format as read in with 
+//		    including leading DOG or CAT or BIRD on first line of output
+		//  returns: nothing
+		public static void writeToFile(PrintWriter outFile, HousePet housePet)
+		{
+			String retStr = "";
+			
+			//constructing the format of the file
+			if(housePet instanceof Dog)
+			{
+				retStr += "DOG ";
+				
+			}
+			
+			else if (housePet instanceof Bird)
+			{
+				retStr += "BIRD ";
+				
+			}
+			
+			else if (housePet instanceof Cat)
+			{
+				retStr += "CAT ";
+				
+			}
+			
+			String id = housePet.getChipId();
+			retStr += id + " ";
+			
+			String name = housePet.getPetName();
+			retStr += name + "\n";
+			
+			String date = housePet.getBirthDateAsString();
+			retStr += date + " ";
+			
+			
+			if(housePet instanceof Dog)
+			{
+				Dog dog = (Dog)housePet;
+				
+				if(dog.isLeashTrained())
+				{
+					retStr += "yes ";
+					
+				}
+				
+				else
+				{
+					retStr += "no ";
+					
+				}
+				
+				String size = dog.getDogSize().toString();
+				retStr += size;
+				
+			}
+			
+			else if(housePet instanceof Cat)
+			{
+				Cat cat = (Cat)housePet;
+				String color = cat.getCatColor().toString();
+				retStr += color;
+			}
+			
+			else if(housePet instanceof Bird)
+			{
+				Bird bird = (Bird)housePet;
+				
+				String kindOfBird = bird.getBirdType().toString();
+				retStr += kindOfBird;
+				
+			}
+			
+			
+			//writing to the file.
+			outFile.println(retStr);
+
+			
+		} //end of writeToFile(PrintWriter outFile, HousePet housePet).
+
+} // end of HousePetUtilsImpl.java
+****************************HousePetUtilsImpl.java***********************************
+
+
+****************************HousePetListImpl.java*************************************
+package housepetlist;
+
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+import housepet.HousePet;
+
+public class HousePetListImpl implements HousePetList
+{
+
+	private int count; 
+	private Node<HousePet> first; //first attribute in the linked list.
+	
+	// default constructor.
+	public HousePetListImpl()
+	{
+		this.count = 0; 
+		this.first = null; 
+	} //end of the default constructor.
+	
+	// receives a fileName of type string
+	// return: nothing
+	// task: create a Scanner that can read from the fileName. Read through the content of this scanner. Initialize all private data. Create Scanner with given fileName
+	// read house pet from scanner, populate array(hint: use add()). Use HousePetListUtilsImpl.readFromScanner(). 
+	// while more data on input file.
+	//		read 1 HousePet
+	//		if(HousePet  is not null)
+	//			add that HousePet to this instance. 
+	//	end while (when there is no more data to read). 
+	public HousePetListImpl(String fileName)
+	{
+		this.first = null;
+		this.count = 0;
+		Scanner inFile = null;
+		try {
+			inFile = new Scanner(new File(fileName));
+		} catch (FileNotFoundException e) {
+			System.out.println("Cannot open the file: "+fileName);
+			
+		}
+		
+		//sending the inFile to scanner. 
+		HousePetListUtilsImpl.readFromScanner(inFile, this);
+	} //end of HousePetListImpl(String fileName).
+	
+	//toString method overridden. 
+	public String toString()
+	{
+		String retValue = ""; 
+		for(Node<HousePet> curr = this.first; curr!=null; curr= curr.link)
+		{
+			retValue += curr.data +"\n"; 
+			
+		}
+		
+		return retValue;
+	} //end of toString
+
+	// returns number of HousePets in the current HousePetList instance
+	public int getSize() 
+	{
+		return this.count;
+		
+	} //end of getSize()
+	
+
+	// returns a String containing each pet in current HousePetList instance that is the given age.
+	// each pet is on a separate line
+	// returns an empty String if no pets in the list match the given age.
+	// example #1: 
+	//   HousePetList myList = new HousePetListImpl();
+	//   fileName = "housepetExtra.txt";
+	//   myList.populateFromFile(fileName);
+	//	 int age = 4;
+	//	 String result = myList.getPetsByAge(age);
+	//   System.out.println("Here are all of the pets at age " + age + ":\n" + result);
+	public String getPetsByAge(int aAge) 
+	{
+		String catAge = "";
+		
+		for(Node<HousePet> curr = this.first; curr!= null; curr = curr.link)
+		{
+			if(curr.data.getAge() == aAge)
+			{
+				catAge += curr.data + "\n";
+			}
+			
+		}
+		return catAge; 
+
+	} //end of getPetsByAge().
+	
+
+	//receives: a HousePet instance that is NOT null
+	//task:   housePet  is added to this list if not already contained in this list
+	//      (house pets must be unique for each chip id)
+	//returns:  true if housePet  was added, false if no room in the list or duplicate
+	//      housePet is found in the list
+	//      a housePet is a duplicate if it has the same chip id for our purposes
+	//      Example use:
+	//        HousePetList list = new HousePetListImpl();
+	//		  Dog dog= new Dog("rr43");
+	//	      dog.setPetName("georgie");
+	//		  dog.setBirthDate(new GregorianCalendar(2017, 3, 21));
+	//        boolean result = list.add(dog);
+	//        assertTrue(result == true);
+	public boolean add(HousePet housePet) 
+	{
+		if(this.getSize() >= MAX_PETS)
+		{
+			return false; 
+		}
+		
+		int index = this.find(housePet);
+		if(index != -1)
+		{
+			return false; //already in the list.
+		}
+		
+		Node<HousePet> node = new Node<HousePet>();
+		node.data = housePet; //populate node with housePet. 
+		Node<HousePet> curr = this.first; 
+		Node<HousePet> prev = null; // trails current by 1 node. 
+		while(curr!= null)
+		{
+			if(curr.data.getBirthDate().compareTo(housePet.getBirthDate()) > 0)
+			{
+				break;
+			}
+			
+			prev = curr; 
+			curr = curr.link;
+			
+		}
+		
+		if (prev == null)
+		{
+			node.link = this.first; 
+			this.first = node;
+			
+		}
+		
+		else
+		{
+			node.link = prev.link;
+			prev.link = node;
+		}
+		
+		this.count++;
+		return true;
+	}  //end of add().
+
+	
+	// receives: a positon (int) in this house pet list
+	// returns: the house pet instance in the list at given position.
+	//       uses zero-based positions, so 0 is the position of the first house pet in the list
+	//       returns null if received position is out of range (0 to less than size of list.)
+	//  Example use:
+	//       HousePetList list = new HousePetListImpl();
+	//        Dog dog= new Dog("rr43");
+	//	      dog.setPetName("georgie");
+	//		  dog.setBirthDate(new GregorianCalendar(2017, 3, 21));
+	//		  list.add(dog);
+	// 		  Dog foundDog = list.get(0);
+	//        assertTrue(foundDog.equals(dog));
+	public HousePet get(int position) 
+	{
+		if(position < 0 || position >= this.getSize())
+		{
+			return null; // out of range. 
+		}
+		
+		int location = 0; 
+		for (Node<HousePet> curr = this.first; curr!= null; curr = curr.link)
+		{
+			if(location == position)
+			{
+				return curr.data; 
+				
+			}
+			
+			location++;
+		}
+		
+		return null;
+	} //end of get().
+	
+
+	// receives: a HousePet instance (not null)
+	// returns:  the position of received house pet in the list (0 based positioning)
+	//       (uses overloaded equals when matching)
+	//       returns -1 if received house pet is not found in current list at any position
+	 //HousePetList list = new HousePetListImpl();
+		//        Dog dog= new Dog("rr43");
+		//	      dog.setPetName("georgie");
+		//		  dog.setBirthDate(new GregorianCalendar(2017, 3, 21));
+	// 		  list.add(dog);
+	//		  int position = list2.find(dog);
+	//	      assertTrue(position == 0);
+	public int find(HousePet housePet) 
+	{
+		int position = 0; 
+		//walk through the list.
+		for(Node<HousePet> curr = this.first; curr!= null; curr = curr.link)
+		{
+			if(curr.data.equals(housePet))
+			{
+				return position;
+			}
+			
+			position++;
+		}
+		return -1;
+	}// end of find
+
+	// receives: nothing
+	// returns: a String containing a list 1 HousePet per line
+	//      that is an instance of a Cat
+	//      returns an EMPTY String if NO cats are in the list
+	//	    Example use: 		
+	public String getAllCats() 
+	{
+		String allCat = "";
+		for (Node<HousePet> curr = this.first; curr!= null; curr = curr.link)
+		{
+			if(curr.data instanceof housepet.Cat) //check to see if the data is an instance of Cat()
+			{
+				allCat += curr.data +"\n";
+			}
+			
+		}
+		return allCat;
+	} //end of getAllCats().
+
+	// receives: nothing
+	// returns: a String containing a list (1 pet per line) of every dog in the current list
+	//      returns an EMPTY String if NO dogs are in the list
+	//    Example use: 
+	public String getAllDogs() 
+	{
+		String getDog = "";
+		for(Node<HousePet>curr = this.first; curr!= null; curr = curr.link)
+		{ 
+			if(curr.data instanceof housepet.Dog) //check for an instance of Dog().
+			{
+				getDog += curr.data + "\n";
+				
+			}
+		}
+		return getDog;
+	} //end of getAllDogs().
+
+	
+	// receives: nothing
+	// returns: a String containing a list (1 pet per line) of every bird in the current list
+	//      returns an EMPTY String if NO birds are in the list
+	//    Example use: 
+	public String getAllBirds() 
+	{
+		String getBird = ""; 
+		for(Node<HousePet>curr = this.first; curr!= null; curr = curr.link)
+		{
+			if(curr.data instanceof housepet.Bird)
+			{
+				getBird += curr.data + "\n";
+			}
+		}
+		
+		return getBird;
+	} //end of getAllBirds().
+
+	
+	// receives: a pet's name (String)
+	// returns: a String containing a list (1 pet per line) of house pets
+	//      with name matching  received (case in-sensitive) String
+	//      if no matches exist, returns empty string
+	//  Example use: 
+	//	HousePet list = new HousePetListImpl();
+	//      HousePet b2 = new HousePet(" Tiny  Cat ", CatColor.TIGER, 250);
+	//      boolean result = list.add(b2);
+	//      assertTrue(result == true);
+	// 		String catNames = list.getHousePetsWithMatchingName("  TINY   CAT   ");
+	//      assertTrue(MyUtils.numberLines(catNames) == 1);
+	public String getHousePetsWithMatchingName(String aName) 
+	{
+		aName = utils.MyUtils.properFormat(aName); 
+		String matchName = "";
+		
+		for(Node<HousePet>curr = this.first; curr!= null; curr = curr.link)
+		{
+			if(curr.data.getPetName().equals(aName)) //check for the matching name
+			{
+				matchName += curr.data +"\n";
+			}
+		}
+		
+		return matchName;
+	} //end of getHousePetsWithMatchingName().
+
+	// receives: a HousePet instance, not null
+	// returns:   a HousePet instance  in this list that is found that MATCHES the
+	//      received house pet instance (assume equals is overloaded for HousePet)
+	//      the HousePet instance in the list that matched received house pet is removed
+	//       from this list AND RETURNED.
+	//       If no HousePet instance is found that matches received house pet
+	//       then null is RETURNED
+	//    Example use: remCat = list.remove(b2);
+	//					assertTrue(remCat == null);
+	public HousePet remove(HousePet housePet) 
+	{
+		int location = this.find(housePet);
+		
+		if(location == -1)
+		{
+			return null; //if no match
+			
+		}
+		
+		
+		Node<HousePet> curr = this.first;
+		Node<HousePet> prev = null; //trails current by 1 node.
+		
+		while(curr!= null)
+		{
+			if(curr.data.equals(housePet))
+			{
+				break;
+			}
+			
+			prev = curr;
+			curr = curr.link; 
+			
+		} //end of while loop.
+		
+		if(prev == null)
+		{
+			this.first = curr.link;
+			
+		}
+		
+		else
+		{
+			prev.link = curr.link; 
+			
+		}
+		
+		this.count--;
+		return housePet;
+		
+	} //end of remove().
+
+	
+	// receives: nothing
+	// returns: nothing
+	// task:  this HousePetList instance is cleared of all pets.
+	//        size of list is 0 when completed.
+	public void clear() 
+	{
+		this.first = null;
+		this.count = 0;
+		
+	} //end of clear().
+	
+
+} //end of HousePetListImpl.java
+************************************HousePetListImpl.java****************************
+
+************************************HousePetListUtilsImpl.java***********************
+
+package housepetlist;
+
+import java.io.PrintWriter;
+import java.util.Scanner;
+
+import housepet.HousePet;
+import housepet.HousePetUtilsImpl;
+
+public class HousePetListUtilsImpl 
+{
+	//receives: inFile, a Scanner already open and ready to read from
+	//  housePetList, a list of house pet instances to add to from inFile if any housepets are found
+	//reads from inFile as many house pets as it can, puts each one into the received house pet list instance 
+	//pre: inFile is open and ready to read from
+	//all house pets found on inFile are added to house pet list using add method in HousePetList interface
+	//returns: nothing
+	public static void readFromScanner(Scanner inFile, HousePetList petList)
+	{
+		while(inFile.hasNext())
+		{
+			HousePet pet = HousePetUtilsImpl.readFromScanner(inFile);
+			if(pet != null)
+			{
+				petList.add(pet);
+			}
+
+		}
+	} //end of readFromScanner().
+
+
+
+	//receives: outFile, an open and ready to write to PrintWriter instance
+	//  petList, a list to be written to outFile in data format (so it can be read back in later)
+	//writes received house pet list to received outFile in same format as read in with descriptor 
+	//on each line describing which type of house pet is on the line
+	//pre: outFile is open and ready to print to
+	//post: outFile contains entire contents of list written in same format
+	//as input format
+	public static void writeToFile(PrintWriter outFile, HousePetList petList)
+	{
+		for(int p = 0; p < petList.getSize(); p++)
+		{
+			HousePetUtilsImpl.writeToFile(outFile,petList.get(p));
+			
+		}
+
+		
+	} //end of writeToFile().
+
+
+} //end of HousePetListUtilsImpl.java
+
+************************************HousePetListUtilsImpl.java***********************

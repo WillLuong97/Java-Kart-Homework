@@ -1,0 +1,607 @@
+Name: Will Luong
+Course: COSC-2425-01
+Professor Baker 
+Assignment 5. 
+Date: October 20, 2018
+
+
+*************BankAccountListImpl.java*****************
+package asg5;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class BankAccountListImpl implements BankAccountList
+{
+	private BankAccount [] array; 
+	private int count = 0; 
+	
+	//Default constructor. 
+	//Recieves: nothing. 
+	//Return: nothing 
+	//Task: initialize the array and its size. 
+	public BankAccountListImpl() 
+	{
+		this.array = new BankAccount[BankAccountList.MAX_SIZE];
+		this.count = 0;
+	} //End of default constructor. 
+	
+	// receives a fileName of type string
+	// return: nothing
+	// task: create a Scanner that can read from the fileName. Read through the content of this scanner. Initialize all private data. Create Scanner with given fileName
+	//read bank account from scanner, populate array(hint: use add()). Use BankAccountUtilsImpl.readFromScanner(). 
+	// while more data on input file. (the loop?)
+	//		read 1 BankAccount
+	//		if(BankAccount is not null)
+	//			add that BankAccount to this instance. 
+	//	end while (when there is no more data to read). 
+	public BankAccountListImpl(String fileName)
+	{
+		
+		this.array = new BankAccount[BankAccountList.MAX_SIZE];
+		this.count = 0;
+
+		Scanner inFile = null; 
+		try
+		{
+			inFile = new Scanner(new File(fileName));
+		} catch (FileNotFoundException e)
+		{
+			System.out.println("Cannot open file : " +fileName + "return");
+			return; 
+		}
+		
+		while(inFile.hasNext())
+		{
+			BankAccount act = BankAccountUtilsImpl.readFromScanner(inFile);
+			if (act != null) 
+			{
+				this.add(act);
+				
+			}
+		} // End of while loop. 
+		
+		inFile.close();
+		
+	} //end of BankAccountListImple(String filename). 
+	
+	
+	//Return: nothing
+	//Receives: nothing
+	//Tasks: make sure that the return values are always a string. 
+	public String toString()
+	{
+		String retValue = ""; 
+		for(int i = 0; i < this.count; i++)
+		{
+			retValue += array[i] + "\n";
+		}
+		return retValue; 
+	} //End of toString method. 
+
+	
+	//receives: nothing
+	// returns: number of BankAccounts currently in the list
+	//  Example use
+	//  BankAccountList list = new BankAccountListImpl();  // create empty list
+	//   assertTrue(list.getSize() == 0);   // size should be 0
+	//  boolean result = list.add(new BankAccount("1122AA","Garcia","Joey",0.0,AccountType.CHECKING, BusinessType.PERSONAL));
+    //  assertTrue(list.getSize() == 1);
+
+	public int getSize() 
+	{
+		return this.count;
+		
+	} //End of getSize. 
+
+	
+	// receives: a BankAccount instance that is NOT null
+	// returns:  true if received bankaccount matches any bankaccount in this list, 
+    //          assumes equals is overloaded in BankAccount class 
+	//          returns false if received bankaccount is not currently in this list
+
+	public boolean contains(BankAccount bankaccount) 
+	{
+		for (int index = 0; index < count; index++)
+		{
+			if(array[index].equals(bankaccount))
+			{
+				return true;
+			}
+		}
+		return false; 
+	} // end of contains method. 
+	
+
+	//receives: a BankAccount instance that is NOT null
+	//task:   bankaccount is added to this list if not already contained in this list
+	//      (bank accounts must be unique for each account number)
+	//returns:  true if bankaccount was added, false if no room in the list or duplicate
+	//      bankaccount is found in the list
+	//      a bankaccount is a duplicate if it has the same account number for our purposes
+	//      Example use:
+	//        BankAccountList list = new BankAccountListImpl();
+	//        boolean result = list.add(new BankAccount("1122AA","Garcia","Joey",0.0,AccountType.CHECKING, BusinessType.PERSONAL));
+	//        assertTrue(result == true);
+
+	public boolean add(BankAccount bankaccount) 
+	{
+		if(this.getSize() == BankAccountList.MAX_SIZE)
+		{
+			return false; 
+		}
+		
+		int location = this.find(bankaccount);
+		if(location!= -1) 
+		{
+			return false; 
+			
+		}
+		
+		this.array[count] = bankaccount;
+		this.count++; 
+		
+		return true; 
+	} //end of add method. 
+
+	// receives: a positon (int) in this bank account list
+	// returns: the bankaccount in the list at given position.
+	//       uses zero-based positions, so 0 is the position of the first bank account in the list
+	//       returns null if received position is out of range (0 to less than size of list.)
+	//  Example use:
+	//        BankAccountList list = new BankAccountListImpl();
+	//        BankAccount b2 = new BankAccount("1122AA","Garcia","Joey",0.0,AccountType.CHECKING, BusinessType.PERSONAL);
+	//        boolean result = list.add(b2);
+	// 		  BankAccount b1 = list.get(0);
+	//        assertTrue(b1.equals(b2));
+	public BankAccount get(int position) 
+	{
+		if(position >= 0 && position < count)
+		{
+			return array[position];
+		}
+		
+		return null; 
+	} //end of get(). 
+
+	
+	// receives: a BankAccount instance (not null)
+	// returns:  the position of received bankaccount in the list (0 based positioning)
+	//       (uses overloaded equals when matching)
+	//       returns -1 if received bankaccount is not found in current list at any position
+	//        BankAccountList list = new BankAccountListImpl();
+	//        BankAccount b2 = new BankAccount("1122AA","Garcia","Joey",0.0,AccountType.CHECKING, BusinessType.PERSONAL);
+	//        boolean result = list.add(b2);
+	//		  int position = list2.find(b2);
+	//	      assertTrue(position == 0);
+	public int find(BankAccount bankaccount) {
+		for(int index = 0; index < count; index++)
+		{
+			if(array[index].equals(bankaccount)) 
+			{ 
+				return index; 
+				
+			}
+		}
+		
+		return -1; 
+	}//end of find(). 
+
+	// receives: nothing
+	// returns: a String containing a list (1 bank account per line) of bank accounts
+	//      that have a balance below 0.0
+	//      returns an EMPTY String if NO bank accounts have a balance less than 0.0
+	//	    Example use:
+	//	    BankAccountList list = new BankAccountListImpl();
+	//        BankAccount b2 = new BankAccount("1122AA","Garcia","Joey",0.0,AccountType.CHECKING, BusinessType.PERSONAL);
+	//        boolean result = list.add(b2);
+	//        assertTrue(result == true);
+	// 		String list1 = list.getBankAccountsDeficient();
+	//      assertTrue(list1.equals(""));
+	public String getBankAccountsDeficient() 
+	{
+		String accountDef = ""; 
+		for(int index = 0; index < count; index++)
+		{
+			if(array[index].getBalance() < 0.0)
+			{
+				accountDef += array[index] + "\n"; 
+				
+			}
+		}
+		return accountDef;
+	} //end of getBankAccountsDefficiency().
+
+	// receives: aAccountType, a bank account type
+	// returns: a String containing a list (1 bank account per line) of bank accounts
+	//       that are of the received account type.
+	//    Example use:
+	//	BankAccountList list = new BankAccountListImpl();
+	//      BankAccount b2 = new BankAccount("1122AA","Garcia","Joey",0.0,AccountType.CHECKING, BusinessType.PERSONAL);
+	//      boolean result = list.add(b2);
+	//      assertTrue(result == true);
+	// 		String list1 = list.getBankAccountsWithAccountType(AccountType.CHECKING);
+	//      assertTrue(MyUtils.numberLines(list1) == 1);
+	public String getBankAccountsWithAccountType(AccountType aAccountType) 
+	{ 
+		String type = ""; 
+		for (int i = 0; i < count; i++)
+		{
+			if(array[i].getAccountType().equals(aAccountType))
+			{
+				type += array[i] + "\n"; 
+			}
+		}
+
+		return type;
+	} // end of getBankAccountsWithAccountType(). 
+
+	// receives: a last name (String)
+	// returns: a String containing a list (1 bank account per line) of bank accounts
+	//      with name matching  received (case in-sensitive) String
+	//      if no matches exist, returns empty string
+        //  Example use:
+	//	BankAccountList list = new BankAccountListImpl();
+	//      BankAccount b2 = new BankAccount("1122AA","Garcia","Joey",0.0,AccountType.CHECKING, BusinessType.PERSONAL);
+	//      boolean result = list.add(b2);
+	//      assertTrue(result == true);
+	// 		String accountNames = list.getBankAccountsWithMatchingLastName("GARCIA");
+	//      assertTrue(MyUtils.numberLines(accountNames) == 1);
+
+	public String getBankAccountsWithMatchingLastName(String aName) 
+	{
+		aName = utils.MyUtils.properFormat(aName);
+		String matchName = ""; 
+		
+		for(int index = 0; index < count; index++)
+		{
+			if(array[index].getLastName().equals(aName))
+			{
+				matchName += array[index] + "\n";
+			}
+		}
+		
+		return matchName; 
+		
+	}// End of getBankAccountsWithMatchingLastName(). 
+
+	// receives: nothing
+	// returns: nothing
+        // task:   this BankAccountList is sorted by account number from lowest to highest (alphabetically)
+	//  Example use (give 2 more):
+	//	BankAccountList list = new BankAccountListImpl();
+	//      BankAccount b2 = new BankAccount("1122AA","Garcia","Joey",0.0,AccountType.CHECKING, BusinessType.PERSONAL);
+        //      BankAccount b3 = new BankAccount("ddKK33"," ROGERS MetCALF","Mary Louise ",0.0,AccountType.SAVINGS, BusinessType.PERSONAL); 
+        //      boolean result = list.add(b3);
+	//      assertTrue(result == true);
+	//      boolean result = list.add(b2);
+	//      assertTrue(result == true);
+	// 	list.sort();
+	//      System.out.println("here is the sorted list:\n" + list);  // should be in appropriate order smallest acct number to largest
+	//       should output: 1122aa  Garcia, Joey 0.0 CHECKING -- PERSONAL
+	//                      ddkk33  Rogers Metcalf, Mary Louise  0.0 SAVINGS -- PERSONAL
+	public void sort() 
+	{
+		for(int index = 0; index < count; index++)
+		{
+			int min = index; 
+			for(int k = index + 1; k < count; k++)
+			{
+				if(array[k].getAccountNumber().compareTo(array[min].getAccountNumber()) < 0)
+				{
+					min = k; 
+					
+				}
+				
+			} // end for k. 
+			
+			BankAccount temp = array[index]; 
+			array[index] = array[min]; 
+			array[min] = temp; 
+		} // end for index. 
+	} //End of sort(). 
+
+	
+	// receives: a BankAccount instance, not null
+  	// returns:   a BankAccount instance  in this list that is found that MATCHES the
+	//      received bankaccount (assume equals is overloaded for BankAccount)
+	//      the BankAccount instance in the list that matched received bankaccount is removed
+	//       from this list AND RETURNED.
+	//       If no BankAccount instance is found that matches received bankaccount
+	//       then null is RETURNED
+        //    Example use:
+        //      BankAccountList list = new BankAccountListImpl();
+	//      BankAccount b2 = new BankAccount("1122AA","Garcia","Joey",0.0,AccountType.CHECKING, BusinessType.PERSONAL);
+        //      BankAccount b3 = new BankAccount("ddKK33"," ROGERS MetCALF","Mary Louise ",0.0,AccountType.SAVINGS, BusinessType.PERSONAL);
+	//      boolean result = list.add(b3);
+	//      assertTrue(result == true);
+        //      boolean result = list.add(b2);
+        //      assertTrue(result == true);
+        //      assertTrue(list.getSize() ==2);
+        //      BankAccount remAct = list.remove(b2);
+        //      assertTrue(remAct.equals(b2));
+        //      assertTrue(list.getSize() == 1);
+        //     Example use #2:
+        //        remAct = list.remove(b2);
+        //        assertTrue(remAct == null);
+	public BankAccount remove(BankAccount bankaccount) 
+	{
+		int location = this.find(bankaccount);
+		if(location == -1)
+		{
+			return null; //if no match. 
+		}
+		
+		BankAccount remAccount = array[location]; 
+		array[location] = array[count - 1]; 
+		count --; 
+		
+		return remAccount; 
+	} //End of remove(). 
+
+    // receives: nothing
+    // returns: nothing
+    // task:  this BankAccountList instance is made to be empty
+    //        clear out all bank accounts from this instance
+
+	public void clear() 
+	{
+		count = 0; 
+	} //End of clear(). 
+	
+	
+
+} //End of BankAccountListImpl(). 
+
+
+
+
+***************BankAccountListUtilsImpl.java************
+package asg5;
+
+import java.io.PrintWriter;
+import java.util.Scanner;
+
+import asg5.AccountType;
+import asg5.BusinessType;
+
+public class BankAccountListUtilsImpl{
+	// receives: inFile, a Scanner instance that is open and ready to read data from
+    //          aList, a BankAccountList instance that is populated with bank accounts from received Scanner
+    //           
+    // task:  populates aList with any bank accounts found on scanner (adds to aList as it reads accounts)
+//   invalid data on scanner stops reading 
+//   stops reading when end of input or when aList reaches MAX_SIZE
+//   or when attempting to read an account and bad data is found
+// Example use: Scanner infile = new Scanner(new File("test.txt"));
+//              BankAccountList myList = new BankAccountList();
+//              readFromScanner(infile, myList);  
+public static void readFromScanner(Scanner inFile, BankAccountList aList)
+{
+	while(inFile.hasNext())
+	{
+		BankAccount act = BankAccountUtilsImpl.readFromScanner(inFile);
+		if(act != null)
+		{
+			aList.add(act);
+		}
+	}
+} //end of readFromScanner method. 
+
+//receives: out, a PrintWriter that is open and ready to write to,
+//aList, a BankAccountList instance to write out to the given PrintWriter
+// 
+// task:  out contains current bank account list in program readable format
+//algorithm: for each BankAccount in received list, use get method to get each account. Call writeToFile sending, out, account. 
+public static void writeToFile(PrintWriter out, BankAccountList aList)
+{
+	for(int account = 0; account < aList.getSize(); account++)
+	{
+		BankAccountUtilsImpl.writeToFile(out,aList.get(account));
+		
+	}
+} //end of writeToFile().
+
+} //end of BankAccountListUtilsImpl(). 
+
+
+
+
+************** Asg5Test output. ********************* 
+Enter your name: Will 
+Begin Asg5 Testing for : Will
+Execution BEGINS  at: 2018-10-20 15:21:50
+
+***** testing constructors and getters *****
+**** Testing getSize() **** 
+****Testing toString()****
+Here is list1:  should be empty
+
+Here is list2:  should have 1 account 
+The banking information is: Martinez Gomez Anna Lisa Maria 300rre CHECKING 300.0 CORPORATE 
+
+Here is list3:  should have 5 accounts 
+The banking information is: Howard William Rogers a500bc CHECKING -50.0 PERSONAL 
+The banking information is: Jones Linda Marie y200cs SAVINGS 200.0 LLC 
+The banking information is: Lopez Martinez Robert James r2100d MONEY_MARKET 1000.0 CORPORATE 
+The banking information is: Speith Jordan pzg400 SAVINGS 400000.0 LLC 
+The banking information is: Martinez Gomez Anna Lisa Maria 300rre CHECKING 300.0 CORPORATE 
+
+Here is list4:  should have 15 (MAX_SIZE) accounts 
+The banking information is: Howard William Rogers a500bc CHECKING -50.0 PERSONAL 
+The banking information is: Jones Linda Marie y200cs SAVINGS 200.0 LLC 
+The banking information is: Lopez Martinez Robert James r2100d MONEY_MARKET 1000.0 CORPORATE 
+The banking information is: Speith Jordan pzg400 SAVINGS 400000.0 LLC 
+The banking information is: Martinez Gomez Anna Lisa Maria 300rre CHECKING 300.0 CORPORATE 
+The banking information is: Howard Joseph xxyyzz CHECKING -50.0 PERSONAL 
+The banking information is: Johnson Lou Ann kc2222 SAVINGS 200.0 LLC 
+The banking information is: Cameron Robert Joseph mr34xv MONEY_MARKET 1000.0 CORPORATE 
+The banking information is: Day Jason k32344 SAVINGS 400000.0 LLC 
+The banking information is: Lafayette Anna Lisa Maria 3343rr CHECKING 300.0 CORPORATE 
+The banking information is: Garcia Joseph d83rkw CHECKING -50.0 PERSONAL 
+The banking information is: Smith-jones Lou Ann 47824g SAVINGS 200.0 LLC 
+The banking information is: Garcia Robert Joseph pi6645 MONEY_MARKET 1000.0 CORPORATE 
+The banking information is: Borne Jason gg92we SAVINGS 400000.0 LLC 
+The banking information is: O'toole Barbara Anna Lisa Maria jk3499 CHECKING 300.0 CORPORATE 
+
+**** End of testConstructorsAndtoString()****
+
+***** testing getters() *****
+****Testing getAccountsDeficient() ****
+Here are the deficient accounts in list3:
+The banking information is: Howard William Rogers a500bc CHECKING -50.0 PERSONAL 
+
+Here are the deficient accounts in list4:
+The banking information is: Howard William Rogers a500bc CHECKING -50.0 PERSONAL 
+The banking information is: Howard Joseph xxyyzz CHECKING -50.0 PERSONAL 
+The banking information is: Garcia Joseph d83rkw CHECKING -50.0 PERSONAL 
+
+****Testing getBankAccountsDeficient()****
+****Testing getAccountsWithMatchingName() ****
+****Testing getAccountsWithAccountType() ****
+****End of testGetters()****
+
+***** testing contains() and add() *****
+Account b2 and b1Duplicate match:  -- YES 
+
+***** testing contains() completed *****
+Size: 2 expected(2)  list1: 
+The banking information is: Woods Alan D jk3499 SAVINGS 1430.0 LLC 
+The banking information is: Lopez Garza Mary mr34xv CHECKING -500.0 PERSONAL 
+
+Size: 1 expected(1) list2: 
+The banking information is: Martinez Gomez Anna Lisa Maria 300rre CHECKING 300.0 CORPORATE 
+
+Size: 6 expected(6) list3: 
+The banking information is: Howard William Rogers a500bc CHECKING -50.0 PERSONAL 
+The banking information is: Jones Linda Marie y200cs SAVINGS 200.0 LLC 
+The banking information is: Lopez Martinez Robert James r2100d MONEY_MARKET 1000.0 CORPORATE 
+The banking information is: Speith Jordan pzg400 SAVINGS 400000.0 LLC 
+The banking information is: Martinez Gomez Anna Lisa Maria 300rre CHECKING 300.0 CORPORATE 
+The banking information is: Anthony Linda Marie ge3343 SAVINGS 1255.0 LLC 
+
+Size: 15 expected(15) list4: 
+The banking information is: Howard William Rogers a500bc CHECKING -50.0 PERSONAL 
+The banking information is: Jones Linda Marie y200cs SAVINGS 200.0 LLC 
+The banking information is: Lopez Martinez Robert James r2100d MONEY_MARKET 1000.0 CORPORATE 
+The banking information is: Speith Jordan pzg400 SAVINGS 400000.0 LLC 
+The banking information is: Martinez Gomez Anna Lisa Maria 300rre CHECKING 300.0 CORPORATE 
+The banking information is: Howard Joseph xxyyzz CHECKING -50.0 PERSONAL 
+The banking information is: Johnson Lou Ann kc2222 SAVINGS 200.0 LLC 
+The banking information is: Cameron Robert Joseph mr34xv MONEY_MARKET 1000.0 CORPORATE 
+The banking information is: Day Jason k32344 SAVINGS 400000.0 LLC 
+The banking information is: Lafayette Anna Lisa Maria 3343rr CHECKING 300.0 CORPORATE 
+The banking information is: Garcia Joseph d83rkw CHECKING -50.0 PERSONAL 
+The banking information is: Smith-jones Lou Ann 47824g SAVINGS 200.0 LLC 
+The banking information is: Garcia Robert Joseph pi6645 MONEY_MARKET 1000.0 CORPORATE 
+The banking information is: Borne Jason gg92we SAVINGS 400000.0 LLC 
+The banking information is: O'toole Barbara Anna Lisa Maria jk3499 CHECKING 300.0 CORPORATE 
+
+
+***** testing add() and contains() completed *****
+
+***** Add() Remove() Get() Find() Testing *****
+**** Testing getSize() **** 
+**** Testing contains() **** 
+**** Testing add() **** 
+***** Now testing toString()*****
+**** Testing find() **** 
+**** Testing get() **** 
+Current List of BankAccounts: should be  5
+The banking information is: Woods Alan D dd623x SAVINGS 1430.0 LLC 
+The banking information is: Lopez Garza Mary aabb22 CHECKING -500.0 PERSONAL 
+The banking information is: Lopez Garza Mary aamf93 CHECKING 1255.0 PERSONAL 
+The banking information is: Garcia John vbtr45 MONEY_MARKET 900.0 CORPORATE 
+
+Current List of Bank Accounts: should be 6
+The banking information is: Woods Alan D dd623x SAVINGS 1430.0 LLC 
+The banking information is: Lopez Garza Mary aabb22 CHECKING -500.0 PERSONAL 
+The banking information is: Lopez Garza Mary aamf93 CHECKING 1255.0 PERSONAL 
+The banking information is: Garcia John vbtr45 MONEY_MARKET 900.0 CORPORATE 
+The banking information is: Rogersstein Marcos yy492x CHECKING 3000.0 CORPORATE 
+
+****Now testing sort() ****
+Sorted list: 
+The banking information is: Lopez Garza Mary aabb22 CHECKING -500.0 PERSONAL 
+The banking information is: Lopez Garza Mary aamf93 CHECKING 1255.0 PERSONAL 
+The banking information is: Woods Alan D dd623x SAVINGS 1430.0 LLC 
+The banking information is: Garcia John vbtr45 MONEY_MARKET 900.0 CORPORATE 
+The banking information is: Rogersstein Marcos yy492x CHECKING 3000.0 CORPORATE 
+
+****
+Now testing remove(); ****
+SUCCESS Expected account The banking information is: Lopez Garza Mary aabb22 CHECKING -500.0 PERSONAL  to be removed 
+SUCCESS Expected account The banking information is: Garcia John vbtr45 MONEY_MARKET 900.0 CORPORATE  to be removed 
+SUCCESS Expected account The banking information is: Lopez Garza Mary aamf93 CHECKING 1255.0 PERSONAL  to be removed 
+
+***** end of testing get() find() add() remove() sort()  *****
+
+------------------------------------------------------
+
+**** Now testing BankAccountListUtilsImpl methods ****
+****Output of bankaccountEmpty.txt:
+Contents of bankaccountEmpty.txt after reading 
+
+****Output of bankaccount1.txt:
+SUCCESS opened file: bankaccount1out.txt for reading...
+Contents of previously written file: bankaccount1out.txt
+The banking information is: Martinez Gomez Anna Lisa Maria 300rre CHECKING 300.0 CORPORATE 
+
+**** Now testing several accounts on a file - read and write ****
+SUCCESS opened for reading: bankaccount.txt
+Contents of bankaccount.txt after reading 
+The banking information is: Howard William Rogers a500bc CHECKING -50.0 PERSONAL 
+The banking information is: Jones Linda Marie y200cs SAVINGS 200.0 LLC 
+The banking information is: Lopez Martinez Robert James r2100d MONEY_MARKET 1000.0 CORPORATE 
+The banking information is: Speith Jordan pzg400 SAVINGS 400000.0 LLC 
+The banking information is: Martinez Gomez Anna Lisa Maria 300rre CHECKING 300.0 CORPORATE 
+
+SUCCESS opened file: bankaccountout.txt for reading...
+Contents of previously written file bankaccountout.txt after reading 
+The banking information is: Howard William Rogers a500bc CHECKING -50.0 PERSONAL 
+The banking information is: Jones Linda Marie y200cs SAVINGS 200.0 LLC 
+The banking information is: Lopez Martinez Robert James r2100d MONEY_MARKET 1000.0 CORPORATE 
+The banking information is: Speith Jordan pzg400 SAVINGS 400000.0 LLC 
+The banking information is: Martinez Gomez Anna Lisa Maria 300rre CHECKING 300.0 CORPORATE 
+
+SUCCESS opened for reading: bankaccountExtra.txt
+Contents of bankaccountExtra.txt after reading 
+The banking information is: Howard William Rogers a500bc CHECKING -50.0 PERSONAL 
+The banking information is: Jones Linda Marie y200cs SAVINGS 200.0 LLC 
+The banking information is: Lopez Martinez Robert James r2100d MONEY_MARKET 1000.0 CORPORATE 
+The banking information is: Speith Jordan pzg400 SAVINGS 400000.0 LLC 
+The banking information is: Martinez Gomez Anna Lisa Maria 300rre CHECKING 300.0 CORPORATE 
+The banking information is: Howard Joseph xxyyzz CHECKING -50.0 PERSONAL 
+The banking information is: Johnson Lou Ann kc2222 SAVINGS 200.0 LLC 
+The banking information is: Cameron Robert Joseph mr34xv MONEY_MARKET 1000.0 CORPORATE 
+The banking information is: Day Jason k32344 SAVINGS 400000.0 LLC 
+The banking information is: Lafayette Anna Lisa Maria 3343rr CHECKING 300.0 CORPORATE 
+The banking information is: Garcia Joseph d83rkw CHECKING -50.0 PERSONAL 
+The banking information is: Smith-jones Lou Ann 47824g SAVINGS 200.0 LLC 
+The banking information is: Garcia Robert Joseph pi6645 MONEY_MARKET 1000.0 CORPORATE 
+The banking information is: Borne Jason gg92we SAVINGS 400000.0 LLC 
+The banking information is: O'toole Barbara Anna Lisa Maria jk3499 CHECKING 300.0 CORPORATE 
+
+SUCCESS opened file: bankaccountExtraout.txt for reading...
+Contents of previously written file bankaccountExtraout.txt after reading 
+The banking information is: Howard William Rogers a500bc CHECKING -50.0 PERSONAL 
+The banking information is: Jones Linda Marie y200cs SAVINGS 200.0 LLC 
+The banking information is: Lopez Martinez Robert James r2100d MONEY_MARKET 1000.0 CORPORATE 
+The banking information is: Speith Jordan pzg400 SAVINGS 400000.0 LLC 
+The banking information is: Martinez Gomez Anna Lisa Maria 300rre CHECKING 300.0 CORPORATE 
+The banking information is: Howard Joseph xxyyzz CHECKING -50.0 PERSONAL 
+The banking information is: Johnson Lou Ann kc2222 SAVINGS 200.0 LLC 
+The banking information is: Cameron Robert Joseph mr34xv MONEY_MARKET 1000.0 CORPORATE 
+The banking information is: Day Jason k32344 SAVINGS 400000.0 LLC 
+The banking information is: Lafayette Anna Lisa Maria 3343rr CHECKING 300.0 CORPORATE 
+The banking information is: Garcia Joseph d83rkw CHECKING -50.0 PERSONAL 
+The banking information is: Smith-jones Lou Ann 47824g SAVINGS 200.0 LLC 
+The banking information is: Garcia Robert Joseph pi6645 MONEY_MARKET 1000.0 CORPORATE 
+The banking information is: Borne Jason gg92we SAVINGS 400000.0 LLC 
+The banking information is: O'toole Barbara Anna Lisa Maria jk3499 CHECKING 300.0 CORPORATE 
+
+**** End of testUtilsMethods() **** 
+
+End of Asg5 Testing for : Will
+Execution ENDS  at: 2018-10-20 15:21:50

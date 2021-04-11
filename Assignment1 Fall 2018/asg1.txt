@@ -1,0 +1,304 @@
+Tri (Will) Luong
+Professor Baker 
+Assignment 1
+COSC-2425.
+
+
+
+package asg1;
+
+import java.util.Scanner;
+
+public class Asg1Part1 
+{
+	public static void main (String[] args)
+	{
+	Scanner scanner = new Scanner(System.in); 
+	
+	//Asking for the user age. 
+	System.out.print("How old are you? ");
+	int age = scanner.nextInt();
+	
+	// Age description 
+	if (age >= 18) 
+	{
+		System.out.println("You are old enough to vote(must be 18 or older) " + " You are " + age +" years old" );
+	}
+	
+	if (age >= 35) 
+	{
+		System.out.println("You are old enough to run for president (must be 35 or older) " + " You are " + age + " years old");
+		
+	}
+	
+	if (age >= 65)
+	{
+		System.out.println("You are old enough to recieve Medicaid benefit (must be 65 or older) " + " You are " + age + " years old ");
+	}
+	
+	if ((age >= 16) && (age <= 25)) 
+	{
+		System.out.println("You are paying extra for your car insurance (between 16 to 25) " + " You are " + age + " years old ");
+	}
+
+	
+	//Asking for the user GPA
+	System.out.print("What is your gpa? ");
+	double gpa = scanner.nextDouble();
+	scanner.nextLine();
+	
+	// Checking the status of the GPA. 
+	if ((gpa < 0.0) || (gpa > 4.0)) 
+	{
+		System.out.println("Error input, we cannot process this request at the moment ");
+		
+	}
+	
+	else if (gpa >= 3.25) 
+	{
+		System.out.println("You are elgible to be on the Dean's list " + "Your gpa is " + gpa);
+	}
+	
+	else if (gpa < 2.0)
+	{
+		System.out.println("Your GPA is low enough to cause a probationary status " + "Your gpa is " + gpa);
+	}
+	
+	else if (gpa >= 2.5) 
+	{
+		System.out.println("Your GPA is at least satisfactory " + "Your gpa is " + gpa);
+	}
+	
+	else {
+		System.out.println("Your GPA is: " + gpa);
+	}
+	
+	
+	
+	
+	// Asking the user for his or her home town.
+	System.out.println("Where is your hometown? ");
+	String homeTown = scanner.nextLine();
+	
+	
+	System.out.println("Your hometown is: " + homeTown + " Welcome!");
+	
+	// Capitalizing all letters in the home town name.
+	String upperTown = homeTown.toUpperCase();
+	System.out.println("Your hometown in capital letters: " + upperTown);
+	// Counting the letter in the home town. 
+	int len = homeTown.length(); 
+	System.out.println(len);
+	
+	} // End of part 1. 
+
+}
+
+How old are you? 21
+You are old enough to vote(must be 18 or older)  You are 21 years old
+You are paying extra for your car insurance (between 16 to 25)  You are 21 years old 
+What is your gpa? 3.82
+You are elgible to be on the Dean's list Your gpa is 3.82
+Where is your hometown? 
+saigon
+Your hometown is: saigon Welcome!
+Your hometown in capital letters: SAIGON
+6
+
+How old are you? 65
+You are old enough to vote(must be 18 or older)  You are 65 years old
+You are old enough to run for president (must be 35 or older)  You are 65 years old
+You are old enough to recieve Medicaid benefit (must be 65 or older)  You are 65 years old 
+What is your gpa? 2.4
+Your GPA is: 2.4
+Where is your hometown? 
+New York
+Your hometown is: New York Welcome!
+Your hometown in capital letters: NEW YORK
+8
+
+How old are you? 25
+You are old enough to vote(must be 18 or older)  You are 25 years old
+You are paying extra for your car insurance (between 16 to 25)  You are 25 years old 
+What is your gpa? 4.5
+Error input, we cannot process this request at the moment 
+Where is your hometown? 
+Los Angeles
+Your hometown is: Los Angeles Welcome!
+Your hometown in capital letters: LOS ANGELES
+11
+
+
+
+//part 2.
+package asg1;
+
+import java.util.Scanner;
+
+public class Asg1Part2 
+{
+	public static void main (String[] args) 
+	{
+		Scanner scanner = new Scanner (System.in);
+		
+		// calculating the sum from 1 to 100 and print the sum with a message. 
+		int s = 0; 
+		for ( int index = 1; index <= 100; index ++) 
+		{
+			s += index; 
+			
+		}
+		
+		// Display message. 
+		System.out.println("The sum from 1 to 100 is: " + s);
+		
+		// The number from 1 to 2000 that evenly divisible by 13. 
+		int s1 = 0;
+		for (int i = 1; i <= 2000; i ++)
+		{
+			if (i % 13 == 0)
+			{
+				s1 += i;
+			}
+		}
+		
+		//Display message. 
+		System.out.println("The sum of numbers from 1 to 2000 that is also evenly divisible by 13 is: " + s1);
+		
+		//The sum of all the squares from 1 to 50. 
+		int s2 = 0; 
+		for (int t = 1; t <= 50; t++) 
+		{
+			s2+= (t*t);
+			
+		}
+		
+		// Display message. 
+		System.out.print("The sum of the squares of all numbers from 1 to 50 is: " + s2);
+		
+		
+	} // end of part 2. 
+	
+}
+
+The sum from 1 to 100 is: 5050
+The sum of numbers from 1 to 2000 that is also evenly divisible by 13 is: 153153
+The sum of the squares of all numbers from 1 to 50 is: 42925
+
+// part 3. 
+package asg1;
+
+import java.util.Scanner;
+
+public class Asg1Part3 
+{ 
+	public static boolean isOdd (int aNumber)
+	{
+		boolean retValue = true; 
+		
+		if (!(aNumber % 2 == 0)) 
+		{
+			retValue = false; 
+			
+		}
+		
+	return retValue; 
+	} //End of method that check for odd or even. 
+	
+	public static String getCategory(double value)
+	{
+		String s = "";  
+		
+		if(value > 100.0) 
+		{
+			s = "over"; 
+		}
+		
+		else if (value <= 100.0 && value >= 25.0) 
+		{
+			s = "average"; 
+			
+		}
+		
+		else if (value < 25.0)
+		{
+			s = "below"; 
+		}
+		
+		else
+		{
+			System.out.println("Nothing here!");
+		}
+	
+	return s; 	
+	}
+	
+	
+	public static void main (String[] args) 
+	{
+		Scanner scanner = new Scanner (System.in);
+		
+		boolean checkNumber; 
+		String getNumber1 = "";
+		// Asking for the number. 
+		System.out.println("Enter an integer here to check if Odd or Even: ");
+		int n = scanner.nextInt(); 
+		
+		checkNumber = isOdd(n);
+		if(checkNumber == true) 
+		{
+			System.out.println("Even number: " + n);
+		}
+		
+		else 
+		{
+			System.out.println("Odd number: " + n);
+		} // End of checking for odd or even number. 
+		
+		//Asking for the number. 
+		System.out.println("Enter another interger to check for its value: ");
+		double n3 = scanner.nextDouble(); 
+		getNumber1 = getCategory(n3);
+		
+		System.out.println(getNumber1);
+		
+	} 
+} // End of part 3. 
+
+Enter an integer here to check if Odd or Even: 
+13
+Odd number: 13
+Enter another interger to check for its value: 
+100.1
+over
+
+Enter an integer here to check if Odd or Even: 
+-2
+Even number: -2
+Enter another interger to check for its value: 
+25.0
+average
+
+Enter an integer here to check if Odd or Even: 
+13
+Odd number: 13
+Enter another interger to check for its value: 
+24.5
+below
+
+Enter an integer here to check if Odd or Even: 
+-2
+Even number: -2
+Enter another interger to check for its value: 
+100.0
+average
+
+
+
+
+
+
+
+	
+
+
